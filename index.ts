@@ -1,19 +1,19 @@
-import readline from "readline-sync";
-import { EquipeLaboratorio } from "./src/models/EquipeLaboratorio";
+import  readline from "readline-sync";
+import { RelatorioCenso } from "./src/models/RelatorioCenso";
 
-const objEquipe = new EquipeLaboratorio("Bancada A", 5);
+const objCenso = new RelatorioCenso(129458, 30);
 
 // Chamada dos métodos getter com ()
-console.log(objEquipe.getBancada());
-console.log(objEquipe.getNumeroMembros());
+console.log(objCenso.getCodigoInstituicao());
+console.log(objCenso.getTotalAlunos());
 
 // Chamada dos métodos setter como funções com argumentos
-objEquipe.setBancada(
-  readline.question("Digite a nova bancada: ")
+objCenso.setCodigoInstituicao(
+  readline.questionFloat("Digite o novo codigo de instituicao: ")
 );
 
-objEquipe.setNumeroMembros(
-  readline.questionInt("Digite o novo numero de membros: ")
+objCenso.setTotalAlunos(
+  readline.questionFloat("Digite o novo numero total de alunos: ")
 );
 
-objEquipe.relatorio();
+objCenso.relatorio();
